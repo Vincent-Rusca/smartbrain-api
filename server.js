@@ -4,10 +4,8 @@ const cors = require('cors');
 const knex = require('knex')({
   client: 'pg',
   connection: {
-    host: 'postgresql-octagonal-33030',
-    user: 'kqcnaqhnolgtzj',
-    password: 'b807e8128e2723d83caec7a47de0777cef15c796276ef6f87acda832ab6eba41',
-    database: 'dfr1r1poll7qb3'
+    host: process.env.DATABASE_URL,
+    ssl: true,
   }
 });
 const register = require('./controllers/register');
